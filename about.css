@@ -1,3 +1,4 @@
+  
 body {
     background-color: rgb(157, 99, 147);
     background-size: cover;
@@ -9,8 +10,20 @@ body {
     body {
       max-width: 415px;
       margin: 0 auto;
+      background-color: rgb(224, 9, 41);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: calc(100vh - 4000px);
+    }
+    
+    /* adjust the margin-bottom of the footer */
+    footer {
+      margin-bottom: 0;
     }
   }
+  
+  
   
 
 .header {
@@ -37,9 +50,9 @@ header::before {
 @media only screen and (max-width: 415px) {
     header::before {
       background-size: 50% auto; /* adjust size of background image */
-      top: -3.5rem; /* adjust position of background image */
-      width: 20.5rem; /* adjust width of background image */
-      height: 10.375rem; /* adjust height of background image */
+      top: -7.5rem; /* adjust position of background image */
+      width: 42.5rem; /* adjust width of background image */
+      height: 25.375rem; /* adjust height of background image */
       left: 0.05rem;
     }
   }
@@ -62,27 +75,86 @@ header::before {
 
 @media only screen and (max-width: 415px) {
     .intro-container {
-        padding: 1rem;
+        padding: 3.5rem;
         border-top-left-radius: 20rem 15rem;
         border-top-right-radius: 20rem 15rem;
         border-bottom-left-radius: 10rem 17.5rem;
         border-bottom-right-radius: 10rem 17.5rem;
-        width: 80%;
+        width: 60rem;
         margin: 0 auto;
-        margin-top: 5rem;
+        margin-top: 15rem;
         font-size: 1.2rem;
+        left: 10rem;
+        margin-left: 7.8rem;
     }
     
     .intro-container h1 {
-      font-size: 1.2rem;
-      line-height: 1.2;
+      font-size: 3rem;
+      line-height: 2.5;
       margin-bottom: 0.5rem;
     }
     
     .intro-container p {
-      font-size: 0.8rem;
-      line-height: 1.2;
+      font-size: 1.7rem;
+      line-height: 2.5;
       margin-bottom: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 376px) {
+    .intro-container {
+        padding: 0.2rem;
+        border-top-left-radius: 20rem 15rem;
+        border-top-right-radius: 20rem 15rem;
+        border-bottom-left-radius: 10rem 17.5rem;
+        border-bottom-right-radius: 10rem 17.5rem;
+        width: 60rem;
+        margin: 0 auto;
+        margin-top: 15rem;
+        font-size: 1.5rem;
+        left: 10rem;
+        margin-left: 7.8rem;
+    }
+    
+    .intro-container h1 {
+      font-size: 3rem;
+      line-height: 2.5;
+      margin-bottom: 0.5rem;
+    }
+    
+    .intro-container p {
+      font-size: 1.9rem;
+      line-height: 2.0;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 361px) {
+    .intro-container {
+        padding: 0.2rem;
+        border-top-left-radius: 20rem 15rem;
+        border-top-right-radius: 20rem 15rem;
+        border-bottom-left-radius: 10rem 17.5rem;
+        border-bottom-right-radius: 10rem 17.5rem;
+        width: 60rem;
+        margin: 0 auto;
+        margin-top: 15rem;
+        font-size: 1.5rem;
+        left: 10rem;
+        margin-left: 7.8rem;
+        margin-top: 30rem;
+    }
+    
+    .intro-container h1 {
+      font-size: 3rem;
+      line-height: 2.5;
+      margin-bottom: 0.5rem;
+    }
+    
+    .intro-container p {
+      font-size: 1.9rem;
+      line-height: 2.0;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -111,7 +183,7 @@ header::before {
 
 @media screen and (max-width: 415px) {
     .main-header {
-      font-size: 1.2rem;
+      font-size: 2.5rem;
       top: 0.5rem;
       margin-left: 0;
       text-align: left;
@@ -120,15 +192,13 @@ header::before {
 
   @media screen and (max-width: 415px) {
     .main-text {
-      font-size: 0.8rem;
+      font-size: 1.8rem;
       top: -0.5rem;
       margin-left: 0;
       text-align: left;
-      max-width: 40%;
+      max-width: 100%;
     }
   }
-  
-
 
 .main-container {
     padding: 0.3125rem 3.125rem 3.125rem; 
@@ -143,11 +213,65 @@ header::before {
     .main-container {
         padding: 0.3125rem 1rem 1rem; 
         margin-left: 0;
-        margin-top: 2rem;
+        margin-top: -27rem;
         border-radius: 0.8rem 0.8rem 4rem 0.8rem;
-        width: auto;
+        width: 73rem;
     }
 }
+
+  @media screen and (max-width: 376px) {
+    .main-header {
+      font-size: 1.9rem;
+      top: -0.1rem;
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .main-text {
+      font-size: 1.5rem;
+      top: -1.7rem;
+      margin-left: 0;
+      text-align: left;
+      max-width: 100%;
+    }
+    .main-container {
+        padding: 0rem 1rem 1rem; 
+        margin-left: 0;
+        margin-top: -30rem;
+        border-radius: 0.8rem 0.8rem 4rem 0.8rem;
+        width: 73rem;
+        height: 38.5rem;
+    }
+
+}
+
+@media screen and (max-width: 361px) {
+    .main-header {
+      font-size: 1.9rem;
+      top: -0.1rem;
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .main-text {
+      font-size: 1.5rem;
+      top: -1.7rem;
+      margin-left: 0;
+      text-align: left;
+      max-width: 100%;
+    }
+    .main-container {
+        padding: 0rem 1rem 1rem; 
+        margin-left: 0;
+        margin-top: -27rem;
+        border-radius: 0.8rem 0.8rem 4rem 0.8rem;
+        width: 73rem;
+        height: 38.5rem;
+    }
+
+}
+
+
 
 .background-color-container {
     background-color: rgb(30, 15, 31);
@@ -158,11 +282,39 @@ header::before {
 
 }
 
+@media screen and (max-width: 415px) {
+    .background-color-container {
+        padding: 24rem;
+    }
+
+}
+
+@media screen and (max-width: 361px) {
+    .background-color-container {
+        padding: 24rem;
+        margin-top: 2rem;
+    }
+
+}
+
+
 .meet-the-team-container {
     margin-top: 3.75rem;
     text-align: center;
     color: white;
 }
+
+@media screen and (max-width: 415px) {
+    .meet-the-team-container {
+      text-align: center;
+    }
+  
+    .meet-the-team-container h2 {
+      margin-right: -45.5rem;
+      font-size: 2.5rem;
+    }
+  }
+  
 
 .headshot-container {
     text-align: center;
@@ -184,11 +336,130 @@ header::before {
     height: 9.375rem;
     border-radius: 20%;
 }
-  
-  .headshot h2 {
+
+.headshot h2 {
     font-size: 1.25rem;
     margin-top: 0.625rem;
 }
+
+@media screen and (max-width: 415px) {
+    .headshot-container {
+        text-align: center;
+        margin-top: -48.75rem;
+        width: 300%;
+        color: white;
+        
+    }
+    
+    .headshot {
+        display: inline-block;
+        margin: 1.75rem;
+    }
+      
+    .headshot img {
+    
+        display: inline-block;
+        width: 19.375rem;
+        height: 18.375rem;
+        border-radius: 20%;
+    }
+    
+    .headshot h2 {
+        font-size: 1.6rem;
+        margin-top: 0.625rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .headshot-container {
+        text-align: center;
+        margin-top: -47.75rem;
+        width: 315%;
+        color: white;
+        margin-left: 2.5rem;
+        
+    }
+    
+    .headshot {
+        display: inline-block;
+        margin: 1.55rem;
+       
+    }
+      
+    .headshot img {
+    
+        display: inline-block;
+        width: 19.375rem;
+        height: 18.375rem;
+        border-radius: 20%;
+    }
+    
+    .headshot h2 {
+        font-size: 1.6rem;
+        margin-top: 0.625rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .headshot-container {
+        text-align: center;
+        margin-top: -47.75rem;
+        width: 315%;
+        color: white;
+        margin-left: 2.5rem;
+        
+    }
+    
+    .headshot {
+        display: inline-block;
+        margin: 1.55rem;
+       
+    }
+      
+    .headshot img {
+    
+        display: inline-block;
+        width: 19.375rem;
+        height: 18.375rem;
+        border-radius: 20%;
+    }
+    
+    .headshot h2 {
+        font-size: 1.6rem;
+        margin-top: 0.625rem;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .headshot-container {
+        text-align: center;
+        margin-top: -46.75rem;
+        width: 415%;
+        color: white;
+        margin-left: -6.5rem;
+        
+    }
+    
+    .headshot {
+        display: inline-block;
+        margin: 1.55rem;
+       
+    }
+      
+    .headshot img {
+    
+        display: inline-block;
+        width: 19.375rem;
+        height: 18.375rem;
+        border-radius: 20%;
+    }
+    
+    .headshot h2 {
+        font-size: 1.6rem;
+        margin-top: 0.625rem;
+    }
+}
+
 
 .navigation {
     display:flex;
@@ -339,6 +610,27 @@ header::before {
     /* Other desktop-specific styles */
 }
 
+@media screen and (max-width: 415px) {
+    .hamburger {
+        transform: translateX(48rem);
+        width: 5.5rem;
+        top: 3.5rem;
+        
+    }
+
+    .hamburger:before {
+        top: 4.5rem;
+        width: 5.5rem;
+        
+    }
+    
+    .hamburger:after {
+        top: 2.5rem;
+        width: 5.5rem;
+        
+    }
+  }
+  
 footer {
     position: relative;
     bottom: 0;
@@ -355,6 +647,29 @@ footer {
    
 }
 
+@media screen and (max-width: 415px) {
+    .image-container {
+      position: relative;
+      top: 15rem;
+      left: 47rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+@media screen and (max-width: 415px) {
+  .image-container {
+    position: relative;
+    top: 2rem;
+    left: 47rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+  
+  
+  
+
 img {
 	width: 28rem;
 	height: 33rem;
@@ -368,5 +683,23 @@ img {
     padding: 20px;
     width: 100%;
   }
-  
-  
+
+  @media screen and (max-width: 415px) {
+    .footer-container {
+        background-color: rgb(169, 187, 248);
+        position: absolute;
+        padding: 1rem;
+        width: 75.1rem;
+        margin-top: 3.3rem;
+    }
+  }
+
+  @media screen and (max-width: 376px) {
+    .footer-container {
+        background-color: rgb(169, 187, 248);
+        position: absolute;
+        padding: 1rem;
+        width: 75.1rem;
+        margin-top: 1.3rem;
+    }
+  }
