@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>techLeap</title>
+
+        <!-- add Bootstrap JavaScript library -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <!-- Include Bootstrap CSS -->
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Include necessary libraries for responsive design -->
+        <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width: 767px)">
+        
+        <!-- Include custom CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>techLeap</h1>
+    <header class="header">
+        <div class="logo">
+          <a href="#">
+            <span class="t"></span>
+          </a>
+        </div>
+  
+        <div class="navigation">
+          <input type = "checkbox" class = "toggle-menu">
+          <div class="hamburger"></div>
+          <ul class ="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="jobs.html">JOBS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </header>
 </body>
 </html>
