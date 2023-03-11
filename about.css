@@ -16,7 +16,7 @@
 
 header::before {
     content: "";
-    background-image: url('techleap_logo.png');
+    background-image: url('images/techleap_logo.png');
     background-size: 15.25rem 15rem; 
     background-repeat: no-repeat;
     background-position: left center;
