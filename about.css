@@ -611,6 +611,7 @@ footer {
 	position: absolute;
 	top: 28.2rem;
 	left: 50rem;
+  opacity: 50%;
    
 }
 
@@ -665,7 +666,7 @@ img {
 
   
   .footer-container {
-    background-color: rgb(169, 187, 248);
+    background-color: black;
     position: absolute;
     padding: 20px;
     width: 100%;
@@ -675,7 +676,6 @@ img {
 
   @media screen and (max-width: 415px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 1.5rem;
         width: 75.1rem;
@@ -686,7 +686,6 @@ img {
 
   @media screen and (max-width: 413px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 3.5rem;
         width: 75.1rem;
@@ -697,7 +696,6 @@ img {
 
   @media screen and (max-width: 394px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 2.1rem;
         width: 75.1rem;
@@ -708,7 +706,6 @@ img {
 
   @media screen and (max-width: 391px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 2.1rem;
         width: 75.1rem;
@@ -719,7 +716,6 @@ img {
 
   @media screen and (max-width: 376px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 1.1rem;
         width: 75.1rem;
@@ -729,7 +725,6 @@ img {
 
   @media screen and (max-width: 361px) {
     .footer-container {
-        background-color: rgb(169, 187, 248);
         position: absolute;
         padding: 3.3rem;
         width: 89.1rem;
