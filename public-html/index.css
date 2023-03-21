@@ -6,7 +6,7 @@ body {
   margin: 0px;
   background-color: rgb(157, 99, 147);
   font-family: 'segoe ui';
-  background-image: url("images\image_slider.jpg");
+  background-image: url("images/image_slider.jpg");
   animation: change 50s infinite ease-in-out; 
   background-size: cover;
 }
