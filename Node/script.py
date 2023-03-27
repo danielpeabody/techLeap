@@ -10,7 +10,7 @@ soup = BeautifulSoup(response.content, 'html.parser')
 
 job_listings = soup.find_all('div', class_='job')
 
-with open('job_postings.csv', mode='w', newline='') as csv_file:
+with open('jobs.csv', mode='w', newline='') as csv_file:
     fieldnames = ['title', 'company', 'location', 'summary']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
