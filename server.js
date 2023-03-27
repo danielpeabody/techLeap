@@ -13,7 +13,7 @@ app.listen(port, () =>
 
 let results = [];
 
-fs.createReadStream('job_postings.csv')
+fs.createReadStream('jobs.csv')
   .pipe(csv({}))
   .on('data',(data) => results.push(data))
   .on('end', ()=>{
