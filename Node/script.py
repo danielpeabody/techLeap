@@ -10,11 +10,12 @@ soup = BeautifulSoup(response.content, 'html.parser')
 
 job_listings = soup.find_all('div', class_='job')
 
-with open('jobs.csv', mode='w', newline='') as csv_file:
+with open('jobs.csv', mode='a', newline='') as csv_file:
     fieldnames = ['title', 'company', 'location', 'summary']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
-    writer.writeheader()
+    if csv_file.tell() == 0:
+        writer.writeheader()
 
     for job in job_listings:
         title = job.find('a', class_='job-title').text.strip()
