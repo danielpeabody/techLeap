@@ -11,12 +11,22 @@ app.use(express.static('public-html'));
 app.listen(port, () => 
   console.log(`App listening at http://localhost:${port}`))
 
-let results = [];
+let csvOne = [];
 
-fs.createReadStream('jobs.csv')
+fs.createReadStream('simply_hired_data_v3.csv')
   .pipe(csv({}))
-  .on('data',(data) => results.push(data))
+  .on('data',(data) => csvOne.push(data))
   .on('end', ()=>{
+    console.log('CSV file read successfully');
+});
+
+let csvTwo = [];
+
+fs.createReadStream('remoterocketship.csv')
+  .pipe(csv({}))
+  .on('data',(data) => csvTwo.push(data))
+  .on('end', ()=>{
+    console.log(csvTwo);
     console.log('CSV file read successfully');
 });
 
@@ -43,5 +53,9 @@ setInterval(() => {
 }, 24 * 60 * 60 * 1000); // Run once a day
 
 app.get('/jobs',(req,res) => {
-    res.send(results)
+    res.send(csvOne)
+})
+
+app.get('/jobsTwo',(req,res) => {
+  res.send(csvTwo)
 })

@@ -41,7 +41,11 @@ p.then((response) => response.json())
         singlejob.appendChild(a);
 
         jobholder[0].appendChild(singlejob);
-
     }
-}
-)
+    let url2 = 'http://localhost:3000/jobsTwo'
+    let q = fetch(url2);
+    q.then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+    })
+})
