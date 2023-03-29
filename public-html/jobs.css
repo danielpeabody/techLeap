@@ -5,14 +5,14 @@
   body {
     margin: 0px;
     font-family: 'segoe ui';
-    background-color: rgb(157, 99, 147);
+    background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
   }
   
   .nav {
     height: 70px;
     width: 100%;
     position: relative;
-    background-color: rgb(157, 99, 147);
+    background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
   }
   
   .nav > .nav-header {
@@ -121,9 +121,11 @@
 
 .singlejob {
   font-size: 10px;
-  color: white;
-  border: 1px solid black;
-  background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid rgb(250, 249, 249);
+  border-radius: 2%;
+  opacity: 80%;
   box-shadow: 10px 5px 5px black;
   margin-top: 1rem;
   margin-left: auto;
@@ -137,10 +139,10 @@
 
 /* CSS */
 .applybutton {
-  background-color: lightblue;
-  color: black;
+  color: white;
   border-radius: 8px;
   border-style: none;
+  background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
   box-sizing: border-box;
   cursor: pointer;
   flex-shrink: 0;
