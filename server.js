@@ -26,7 +26,6 @@ fs.createReadStream('remoterocketship.csv')
   .pipe(csv({}))
   .on('data',(data) => csvTwo.push(data))
   .on('end', ()=>{
-    console.log(csvTwo);
     console.log('CSV file read successfully');
 });
 
