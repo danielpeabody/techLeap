@@ -84,9 +84,29 @@ p.then((response) => response.json())
 
             jobList.push(singlejob)
         }
-        for(let i = 0; i < jobList.length; i++){
-            jobholder[0].appendChild(jobList[i]);
+        let shuffleJobs = shuffle(jobList);
+        for(let i = 0; i < shuffleJobs.length; i++){
+            jobholder[0].appendChild(shuffleJobs[i]);
         }
 
     })
 })
+
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
