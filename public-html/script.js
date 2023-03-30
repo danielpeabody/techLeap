@@ -2,11 +2,13 @@
 
 let jobholder = document.getElementsByClassName('jobholder');
 let jobList = [];
+let jobnumber = 0;
 
 let url = 'http://localhost:3000/jobs'
 let p = fetch(url);
 p.then((response) => response.json())
 .then((data) => {
+    jobnumber = jobnumber + data.length
     for(let i = 0; i < data.length; i ++){
         let keylist = Object.keys(data[0]);
         const singlejob = document.createElement("div");
@@ -48,6 +50,7 @@ p.then((response) => response.json())
     let q = fetch(url2);
     q.then((response) => response.json())
     .then((data) => {
+        jobnumber = jobnumber + data.length
         for(let i = 0; i < data.length; i ++){
             let keylist = Object.keys(data[0]);
             const singlejob = document.createElement("div");
@@ -70,7 +73,7 @@ p.then((response) => response.json())
     
             const p = document.createElement("p");
             p.className = "jobsnip";
-            p.innerText = data[i][keylist[4]];
+            p.innerText = data[i][keylist[4]].slice(0,200) + "...";
             singlejob.appendChild(p);
             
             const a = document.createElement("a");
@@ -84,6 +87,7 @@ p.then((response) => response.json())
 
             jobList.push(singlejob)
         }
+        console.log(jobnumber);
         let shuffleJobs = shuffle(jobList);
         for(let i = 0; i < shuffleJobs.length; i++){
             jobholder[0].appendChild(shuffleJobs[i]);
