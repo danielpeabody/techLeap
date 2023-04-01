@@ -51,22 +51,34 @@ setInterval(() => {
   });
 }, 24 * 60 * 60 * 1000); // Run once a day
 
-app.get('/jobs/:jobtitle',(req,res) => {
+app.get('/jobs/:jobtitle/:company',(req,res) => {
   let retval = []
+  if(req.params.jobtitle == "$ALL"){
+    req.params.jobtitle = '';
+  }
+  if(req.params.company == "$ALL"){
+    req.params.company = '';
+  }
   let keylist = Object.keys(csvOne[0]);
   for(let i = 0; i < csvOne.length; i++){
-    if(csvOne[i][keylist[0]].toLowerCase().includes(req.params.jobtitle)  || req.params.jobtitle == "all"){
+    if(csvOne[i][keylist[0]].toLowerCase().includes(req.params.jobtitle) & csvOne[i][keylist[1]].toLowerCase().includes(req.params.company)){
       retval.push(csvOne[i])
     }
   }
     res.send(retval)
 })
 
-app.get('/jobsTwo/:jobtitle',(req,res) => {
+app.get('/jobsTwo/:jobtitle/:company',(req,res) => {
   let retval = []
+  if(req.params.jobtitle == "$ALL"){
+    req.params.jobtitle = '';
+  }
+  if(req.params.company == "$ALL"){
+    req.params.company = '';
+  }
   let keylist = Object.keys(csvTwo[0]);
   for(let i = 0; i < csvTwo.length; i++){
-    if(csvTwo[i][keylist[0]].toLowerCase().includes(req.params.jobtitle) || req.params.jobtitle == "all"){
+    if(csvTwo[i][keylist[0]].toLowerCase().includes(req.params.jobtitle) & csvOne[i][keylist[1]].toLowerCase().includes(req.params.company)){
       retval.push(csvTwo[i])
     }
   }
