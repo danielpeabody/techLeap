@@ -52,9 +52,23 @@ setInterval(() => {
 }, 24 * 60 * 60 * 1000); // Run once a day
 
 app.get('/jobs/:jobtitle',(req,res) => {
-    res.send(csvOne)
+  let retval = []
+  let keylist = Object.keys(csvOne[0]);
+  for(let i = 0; i < csvOne.length; i++){
+    if(csvOne[i][keylist[0]].toLowerCase().includes(req.params.jobtitle)  || req.params.jobtitle == "all"){
+      retval.push(csvOne[i])
+    }
+  }
+    res.send(retval)
 })
 
 app.get('/jobsTwo/:jobtitle',(req,res) => {
-  res.send(csvTwo)
+  let retval = []
+  let keylist = Object.keys(csvTwo[0]);
+  for(let i = 0; i < csvTwo.length; i++){
+    if(csvTwo[i][keylist[0]].toLowerCase().includes(req.params.jobtitle) || req.params.jobtitle == "all"){
+      retval.push(csvTwo[i])
+    }
+  }
+    res.send(retval)
 })

@@ -3,9 +3,7 @@
 let jobholder = document.getElementsByClassName('jobholder');
 let searchbutton = document.getElementById('searchbutton');
 
-let jobtitle = document.getElementById('title');
 
-jobsearch();
 searchbutton.addEventListener("click",(event)=>{
     console.log('click')
     while (jobholder[0].firstChild) {
@@ -15,7 +13,12 @@ searchbutton.addEventListener("click",(event)=>{
 });
 
 function jobsearch(){
-let url = 'http://localhost:3000/jobs/' + 'soft'
+let jobtitle = document.getElementById('title');
+if(jobtitle.value == ''){
+    jobtitle.value = "all";
+}
+console.log(jobtitle.value);
+let url = 'http://localhost:3000/jobs/' + jobtitle.value
 let p = fetch(url);
 let jobList = [];
 let jobnumber = 0;
@@ -59,7 +62,7 @@ p.then((response) => response.json())
         jobList.push(singlejob);
 
     }
-    let url2 = 'http://localhost:3000/jobsTwo/' + 'soft'
+    let url2 = 'http://localhost:3000/jobsTwo/' + jobtitle.value
     let q = fetch(url2);
     q.then((response) => response.json())
     .then((data) => {
