@@ -1,12 +1,24 @@
 
 
 let jobholder = document.getElementsByClassName('jobholder');
-let jobList = [];
-let jobnumber = 0;
+let searchbutton = document.getElementById('searchbutton');
+
+let jobtitle = document.getElementById('title');
+
+jobsearch();
+searchbutton.addEventListener("click",(event)=>{
+    console.log('click')
+    while (jobholder[0].firstChild) {
+        jobholder[0].firstChild.remove();
+    }
+    jobsearch();
+});
 
 function jobsearch(){
-let url = 'http://localhost:3000/jobs'
+let url = 'http://localhost:3000/jobs/' + 'soft'
 let p = fetch(url);
+let jobList = [];
+let jobnumber = 0;
 p.then((response) => response.json())
 .then((data) => {
     jobnumber = jobnumber + data.length
@@ -47,7 +59,7 @@ p.then((response) => response.json())
         jobList.push(singlejob);
 
     }
-    let url2 = 'http://localhost:3000/jobsTwo'
+    let url2 = 'http://localhost:3000/jobsTwo/' + 'soft'
     let q = fetch(url2);
     q.then((response) => response.json())
     .then((data) => {
@@ -100,8 +112,6 @@ p.then((response) => response.json())
 
 }
 
-
-
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -119,6 +129,3 @@ function shuffle(array) {
   
     return array;
   }
-
-
-jobsearch()

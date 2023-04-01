@@ -51,10 +51,10 @@ setInterval(() => {
   });
 }, 24 * 60 * 60 * 1000); // Run once a day
 
-app.get('/jobs',(req,res) => {
+app.get('/jobs/:jobtitle',(req,res) => {
     res.send(csvOne)
 })
 
-app.get('/jobsTwo',(req,res) => {
+app.get('/jobsTwo/:jobtitle',(req,res) => {
   res.send(csvTwo)
 })
