@@ -4,6 +4,7 @@ let jobholder = document.getElementsByClassName('jobholder');
 let jobList = [];
 let jobnumber = 0;
 
+function jobsearch(){
 let url = 'http://localhost:3000/jobs'
 let p = fetch(url);
 p.then((response) => response.json())
@@ -97,6 +98,10 @@ p.then((response) => response.json())
 })
 
 
+}
+
+
+
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -114,3 +119,6 @@ function shuffle(array) {
   
     return array;
   }
+
+
+jobsearch()
