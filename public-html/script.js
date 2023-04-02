@@ -101,7 +101,7 @@ p.then((response) => response.json())
             singlejob.appendChild(p);
             
             const a = document.createElement("a");
-            a.href = data[i][keylist[5]];
+            a.href = data[i][keylist[7]];
             const button = document.createElement("button");
             button.className = "applybutton";
             button.innerText = "Apply";
