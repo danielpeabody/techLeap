@@ -4,7 +4,7 @@ const express = require('express')
 const app     = express();
 const port    = 3000;
 const path = require('path');
-const { spawn } = require('child_process');
+const { spawn } = require('child_process')
 
 app.use(express.static('public-html'));
 
@@ -13,7 +13,7 @@ app.listen(port, () =>
 
 let csvOne = [];
 
-fs.createReadStream('simply_hired_data_v3.csv')
+fs.createReadStream('SimplyHired_data.csv')
   .pipe(csv({}))
   .on('data',(data) => csvOne.push(data))
   .on('end', ()=>{
@@ -30,26 +30,13 @@ fs.createReadStream('remoterocketship.csv')
 });
 
 // Run the script once a day
-setInterval(() => {
-  const pyProg = spawn('python', ['script.py']);
 
-  pyProg.stdout.on('data', function(data) {
-      console.log(data.toString());
-  });
-  pyProg.stderr.on('data', (data) => {
-      console.error(`stderr: ${data}`);
-  });
-  
-  // Write the updated data back to the CSV file
-  const stream = fs.createWriteStream("job_postings.csv");
-  stream.once('open', () => {
-    results.forEach((row) => {
-      stream.write(`${row.title},${row.company},${row.location},${row.summary}\n`);
-    });
-    stream.end();
-    console.log('Data written to CSV file successfully');
-  });
-}, 24 * 60 * 60 * 1000); // Run once a day
+
+//const pyProg = spawn('python', ['SimplyHired_scraping.py']);
+const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
+const remoterocketship = spawn('python',["remoterocketship.py"]);
+
+ // Run once a day
 
 app.get('/jobs/:jobtitle/:company/:location',(req,res) => {
   let retval = []
