@@ -5,37 +5,74 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
 import time
 import re
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementNotInteractableException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome()
-driver.maximize_window()
+options = Options()
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
+driver.get('http://selenium.dev')
+
+rrs_page = "https://remoterocketship.com"
+page = driver.get(rrs_page)
+
+rrs_login = "//a[@href = '/log-in']"
+driver.find_element(By.XPATH, rrs_login).click()
+time.sleep(2)
+rrs_email_text = "//input[@class = 'bg-button-secondary-highlighted text-primary border border-white rounded-lg text-lg p-2 focus:border-button-primary focus:outline-none mb-4 w-full sm:w-96']"
+rrs_email = driver.find_element(By.XPATH, rrs_email_text)
+rrs_email.send_keys('capstoneprjct@hotmail.com')
+rrs_email.send_keys(Keys.ENTER)
+time.sleep(2)
+
+main = "https://outlook.live.com"
+page = driver.get(main)
+sign_button = "//a[@class = 'internal sign-in-link']"
+signin = driver.find_elements(By.XPATH, sign_button)[1].click()
+email_input = driver.find_element(By.ID, 'i0116')
+email_input.send_keys('capstoneprjct@hotmail.com')
+email_input.send_keys(Keys.ENTER)
+time.sleep(2)
+email_pass = driver.find_element(By.ID,'i0118')
+email_pass.send_keys('@qwerty12345')
+email_pass.send_keys(Keys.ENTER)
+time.sleep(1)
+yes = driver.find_element(By.ID,'idSIButton9')
+yes.click()
+time.sleep(2)
+mail = driver.find_element(By.XPATH,"//span[@title = 'noreply@mail.app.supabase.io']")
+mail.click()
+time.sleep(2)
+token = driver.find_element(By.XPATH, "//a[@target = '_blank']")
+token.click()
+
+driver.switch_to.window(driver.window_handles[0])
+driver.close()
+driver.switch_to.window(driver.window_handles[-1])
+
 
 # Create an empty DataFrame with column names
 df = pd.DataFrame(columns=['Job Title', 'Company', 'Location', 'Job Type', 'Description','Link'])
 job_listing = []
-main = "https://www.remoterocketship.com/"
-page = driver.get(main)
+#main = "https://www.remoterocketship.com/"
+#page = driver.get(main)
 
 # Get the current window handle
 current_window = driver.current_window_handle
 
 #Find button to choose junior
 experience = "//input[@id='react-select-⚪️ Experience-input']"
-#driver.find_element_by_xpath(experience).click()
-driver.find_element("xpath", experience).click()
-
+driver.find_element(By.XPATH, experience).click()
 time.sleep(3)
 
 # Find the div element by its class name (replace "div-class" with the actual class name of the div)
-div_element = driver.find_element('id',"react-select-⚪️ Experience-listbox")
-#junior = driver.find_element_by_xpath("//div[contains(@class, 'css-qr46ko')]//div[contains(text(), 'Junior')]").click()
-junior = driver.find_element("xpath", "//div[contains(@class, 'css-qr46ko')]//div[contains(text(), 'Junior')]").click()
+div_element = driver.find_element(By.ID, "react-select-⚪️ Experience-listbox")
+junior = driver.find_element(By.XPATH, "//div[contains(@class, 'css-qr46ko')]//div[contains(text(), 'Junior')]").click()
 time.sleep(5)
-job_elements = driver.find_elements("xpath","//div[@class = 'sm:w-8/12 list-none']")
+job_elements = driver.find_elements(By.XPATH, "//div[@class = 'sm:w-8/12 list-none']")
 num_li_tags = len(job_elements)
 
 # Find all the buttons with the class name (buttons to change page)
@@ -47,11 +84,11 @@ max_value = max(int(page_button.text.strip()) for page_button in buttons)
 # max_value+1
 
 # Click each button in order
-for j in range(1):
+for j in range(max_value + 1):
     
     #Exceptions are for in case it does not find the job listing or if it could not interact with
     try:
-        page_button = driver.find_element("xpath",f"//span[text()='{j+1}']")
+        page_button = driver.find_element(By.XPATH, f"//span[text()='{j+1}']")
         page_button.click()
         time.sleep(3)
     except NoSuchElementException:
@@ -67,7 +104,7 @@ for j in range(1):
         #handle the exception if it could not click on the job_listing
         try:
             xpath = "//div[@class = 'sm:w-8/12 list-none'][{}]".format(i+1)
-            job_element = driver.find_element("xpath",xpath)
+            job_element = driver.find_element(By.XPATH, xpath)
             job_element.click()
         except NoSuchElementException:
             # handle the exception by skipping the step
@@ -82,18 +119,18 @@ for j in range(1):
         try:
             #Finding the Title
             soup = BeautifulSoup(driver.page_source, 'html.parser')
-            job_title = driver.find_element("xpath","//h1[@class = 'text-3xl font-semibold text-primary']")
+            job_title = driver.find_element(By.XPATH, "//h1[@class = 'text-3xl font-semibold text-primary']")
             job_title = job_title.text
 
             
             #Finding the description
-            info = driver.find_elements('xpath',"//p[@class = 'text-secondary whitespace-pre-line']")
+            info = driver.find_elements(By.XPATH,"//p[@class = 'text-secondary whitespace-pre-line']")
             info[0].text
             info[1].text
             description = info[0].text + info[1].text
 
             #Finding the Company Name
-            company_name = driver.find_element("xpath","//h2[@class = 'text-lg font-semibold text-center text-primary mb-1 mt-2']")
+            company_name = driver.find_element(By.XPATH, "//h2[@class = 'text-lg font-semibold text-center text-primary mb-1 mt-2']")
             company_name = company_name.text
     
             
@@ -115,7 +152,7 @@ for j in range(1):
 
         try:
             #Finding the Link
-            job_link = driver.find_element("xpath","//a[@target = '_blank']")
+            job_link = driver.find_element(By.XPATH, "//a[@target = '_blank']")
             job_link.click()
             driver.switch_to.window(driver.window_handles[-1])
             time.sleep(3)
@@ -200,4 +237,4 @@ for j in range(1):
         #df = df.iloc[::-1]
     string = "We are in Page {}.".format(j+1)
     print(string)
-df.to_csv('remoterocketship_final.csv', index = False)
+df.to_csv('remoterocketship.csv', index = False)

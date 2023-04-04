@@ -4,7 +4,8 @@ const express = require('express')
 const app     = express();
 const port    = 3000;
 const path = require('path');
-const { spawn } = require('child_process')
+const { spawn } = require('child_process');
+const internal = require('stream');
 
 app.use(express.static('public-html'));
 
@@ -29,12 +30,14 @@ fs.createReadStream('remoterocketship.csv')
     console.log('CSV file read successfully');
 });
 
-// Run the script once a day
+// Run the script every 3 days
+setInterval(runScripts,(1000 * 60 * 60 * 24) * 3)
 
-
-//const pyProg = spawn('python', ['SimplyHired_scraping.py']);
-const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
-const remoterocketship = spawn('python',["remoterocketship.py"]);
+function runScripts(){
+  console.log('running')
+  const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
+  const remoterocketship = spawn('python',["remoterocketship.py"]);
+}
 
  // Run once a day
 
