@@ -120,7 +120,7 @@
 }
 
 .singlejob {
-  font-size: 10px;
+  font-size: 14px;
   color: black;
   background-color: whitesmoke;
   border: 1px solid rgb(250, 249, 249);
@@ -134,8 +134,9 @@
 }
 
 .singlejob h3 {
-  font-size: 12px;
+  font-size: 18px;
 }
+
 
 /* CSS */
 .applybutton {
