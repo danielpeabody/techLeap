@@ -119,7 +119,8 @@ body {
 
 .question_container h2 {
   margin: 2rem;
-  color: black;
+  color: #673FD7;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
