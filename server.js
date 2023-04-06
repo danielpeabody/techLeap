@@ -9,7 +9,7 @@ const internal = require('stream');
 
 app.use(express.static('public-html'));
 
-app.listen(port, () => 
+app.listen(port,"147.182.136.50",() => 
   console.log(`App listening at http://localhost:${port}`))
 
 let csvOne = [];
@@ -30,7 +30,7 @@ fs.createReadStream('remoterocketship.csv')
     console.log('CSV file read successfully');
 });
 
-// Run the script every 3 days
+/* Run the script every 3 days
 setInterval(runScripts,(1000 * 60 * 60 * 24) * 3)
 
 function runScripts(){
@@ -39,7 +39,7 @@ function runScripts(){
   const remoterocketship = spawn('python',["remoterocketship.py"]);
 }
 
- // Run once a day
+ Run once a day */
 
 app.get('/jobs/:jobtitle/:company/:location',(req,res) => {
   let retval = []

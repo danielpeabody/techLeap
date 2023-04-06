@@ -26,7 +26,7 @@ if(location.value == ''){
     location.value = "$ALL";
 }
 console.log(location.value)
-let url = 'http://localhost:3000/jobs/' + jobtitle.value + "/" + company.value + "/" + location.value;
+let url = 'jobs/' + jobtitle.value + "/" + company.value + "/" + location.value;
 let p = fetch(url);
 let jobList = [];
 let jobnumber = 0;
@@ -70,7 +70,7 @@ p.then((response) => response.json())
         jobList.push(singlejob);
 
     }
-    let url2 = 'http://localhost:3000/jobsTwo/' + jobtitle.value + "/" + company.value + "/" + location.value;
+    let url2 = 'jobsTwo/' + jobtitle.value + "/" + company.value + "/" + location.value;
     let q = fetch(url2);
     q.then((response) => response.json())
     .then((data) => {
