@@ -25,8 +25,12 @@ let location = document.getElementById('location');
 if(location.value == ''){
     location.value = "$ALL";
 }
+let salary = document.getElementById('salary');
+if(salary.value == ''){
+    salary.value = "$ALL";
+}
 console.log(location.value)
-let url = 'jobs/' + jobtitle.value + "/" + company.value + "/" + location.value;
+let url = 'jobs/' + jobtitle.value + "/" + company.value + "/" + location.value + "/" +salary.value;
 let p = fetch(url);
 let jobList = [];
 let jobnumber = 0;
@@ -70,7 +74,7 @@ p.then((response) => response.json())
         jobList.push(singlejob);
 
     }
-    let url2 = 'jobsTwo/' + jobtitle.value + "/" + company.value + "/" + location.value;
+    let url2 = 'jobsTwo/' + jobtitle.value + "/" + company.value + "/" + location.value + "/" + salary.value;
     let q = fetch(url2);
     q.then((response) => response.json())
     .then((data) => {
