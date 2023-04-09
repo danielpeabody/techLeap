@@ -121,9 +121,21 @@ p.then((response) => response.json())
             jobList.push(singlejob)
         }
         console.log(jobnumber);
-        jobtitle.value = '';
-        company.value = '';
-        location.value = '';
+        if(jobtitle.value == "$ALL"){
+            jobtitle.value = '';
+        }
+        if(company.value == "$ALL"){
+            company.value = '';
+        }
+        if(location.value == "$ALL"){
+            location.value = '';
+        };
+        if(salary.value == "$ALL"){
+            salary.value = '';
+        };
+        if(keywords.value == "$ALL"){
+            keywords.value = '';
+        };
         let shuffleJobs = shuffle(jobList);
         for(let i = 0; i < shuffleJobs.length; i++){
             jobholder[0].appendChild(shuffleJobs[i]);
