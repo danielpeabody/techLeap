@@ -108,7 +108,9 @@ p.then((response) => response.json())
     
             const p = document.createElement("p");
             p.className = "jobsnip";
-            p.innerText = data[i][keylist[4]].slice(0,200) + "...";
+            let textContent = data[i][keylist[4]].slice(0,300) + "...";
+            let textContent2 = textContent.replace(/\n|\r/g, "");
+            p.innerText = textContent2
             singlejob.appendChild(p);
             
             const a = document.createElement("a");

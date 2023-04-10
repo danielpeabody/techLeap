@@ -9,7 +9,7 @@ const internal = require('stream');
 
 app.use(express.static('public-html'));
 
-app.listen(port,'147.182.136.50',() => 
+app.listen(port,() => 
   console.log(`App listening at http://localhost:${port}`))
 
 let csvOne = [];

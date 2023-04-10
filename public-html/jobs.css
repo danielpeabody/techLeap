@@ -137,6 +137,12 @@
   font-size: 18px;
 }
 
+.jobsnip {
+  max-width: 100ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* CSS */
 .applybutton {
