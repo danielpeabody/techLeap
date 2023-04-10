@@ -2,6 +2,8 @@
 
 let jobholder = document.getElementsByClassName('jobholder');
 let searchbutton = document.getElementById('searchbutton');
+let filterTitle = document.getElementById('filtertitle');
+console.log(filterTitle);
 
 
 searchbutton.addEventListener("click",(event)=>{
@@ -120,7 +122,8 @@ p.then((response) => response.json())
 
             jobList.push(singlejob)
         }
-        console.log(jobnumber);
+        console.log(filterTitle.textContent);
+        filterTitle.textContent = "Filtering Options | Showing " + jobnumber + " jobs"
         if(jobtitle.value == "$ALL"){
             jobtitle.value = '';
         }
@@ -164,3 +167,6 @@ function shuffle(array) {
   
     return array;
   }
+
+
+jobsearch()
