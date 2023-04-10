@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-#options.headless = True
+options.headless = True
 driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 

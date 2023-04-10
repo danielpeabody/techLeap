@@ -41,8 +41,8 @@ function runScripts(){
 
  Run once a day */
  
- const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
- const remoterocketship = spawn('python',["remoterocketship.py"]);
+ //const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
+ //const remoterocketship = spawn('python',["remoterocketship.py"]);
 
 app.get('/jobs/:jobtitle/:company/:location/:salary/:keywords',(req,res) => {
   let retval = []

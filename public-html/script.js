@@ -167,6 +167,3 @@ function shuffle(array) {
   
     return array;
   }
-
-
-jobsearch()
