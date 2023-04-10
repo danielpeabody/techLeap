@@ -12,9 +12,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.add_argument("--headless=new")
+#options.headless = True
 driver = webdriver.Chrome(options=options)
-driver.get('http://selenium.dev')
+driver.maximize_window()
 
 rrs_page = "https://remoterocketship.com"
 page = driver.get(rrs_page)
@@ -237,4 +237,4 @@ for j in range(max_value + 1):
         #df = df.iloc[::-1]
     string = "We are in Page {}.".format(j+1)
     print(string)
-df.to_csv('remoterocketship.csv', index = False)
+df.to_csv('remoterocketship_final.csv', index = False)
