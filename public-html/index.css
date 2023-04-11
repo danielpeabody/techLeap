@@ -4,11 +4,9 @@
 
 body {
   margin: 0px;
-  background-color: rgb(157, 99, 147);
   font-family: 'segoe ui';
   background-image: url("images/image_slider.jpg");
   animation: change 50s infinite ease-in-out; 
-  background-size: cover;
 }
 
 @keyframes change {
@@ -34,7 +32,8 @@ body {
   height: 70px;
   width: 100%;
   position: relative;
-  
+  z-index: 10;
+  font-size: 2rem;
 }
 
 .nav > .nav-header {
@@ -44,7 +43,6 @@ body {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  color: #fff;
   padding: 10px 10px 10px 10px;
 }
 
@@ -62,11 +60,11 @@ body {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: #efefef;
+  color: white;
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
 }
 
 .nav > #nav-check {
@@ -87,7 +85,7 @@ body {
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(92.88deg, #e943d3 9.16%, #7f30c3 43.89%, #673FD7 64.72%);
   }
   .nav > .nav-btn > label > span {
     display: block;
@@ -99,7 +97,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: rgb(157, 99, 147);
+    background-color: black;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -123,73 +121,40 @@ body {
   width: 200px;
 }
 
+.textContainer{
+  color: white;
+  text-align: center;
+}
 
-  .intro-container {
-    position: absolute;
-    top: 280%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
+.textContainer h1{
+  font-size: 3rem;
+  padding-top: 2rem;
+}
+
+.textContainer h2{
+  font-size: 2.5rem;
+}
+.textContainer h3{
+  font-size: 2.5rem;
+}
+.textContainer p {
+  font-size: 2rem;
+}
+
+@media (max-width:600px){
+  .textContainer h1{
+    font-size: 2rem;
   }
-
-  .intro-container h1 {
-    font-size: 1.5em;
-    font-weight: normal;
-    margin-bottom: -3.5rem;
-    font-family: 'san-serif';
-    font-style: inherit;
-    color: white;
+  
+  .textContainer h2{
+    font-size: 1.5rem;
   }
-
-  .intro-container p {
-    font-size: 3.5em;
-    font-family: 'Calibri';
-    font-style: initial;
-    color: white;
+  .textContainer h3{
+    font-size: 1.5rem;
   }
-
-  .parent-element {
-    position: relative;
+  .textContainer p {
+    font-size: 1rem;
   }
-
-  .closing-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    margin-top: 26rem;
-  }
-
-  .closing-container h1 {
-    font-size: 1.5em;
-    font-weight: normal;
-    font-family: 'san-serif';
-    font-style: initial;
-    margin-top: -8.2rem;
-    color: white;
-  }
-
-  .closing-container p {
-    font-size: 1.5em;
-    margin-top: -1.2rem;
-    font-weight: normal;
-    font-family: 'san-serif';
-    font-style: initial;
-    color: white;
-    
-  }
-
-  .bottom-container {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    margin-top: 26rem;
-    font-size: 0.8rem;
-    color: white;
 }
 
 
