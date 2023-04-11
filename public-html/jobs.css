@@ -178,7 +178,7 @@ input {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 10%;
+  width: 200px;
   will-change: transform;
   margin-top: 2rem;
 }
