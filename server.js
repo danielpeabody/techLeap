@@ -30,7 +30,7 @@ fs.createReadStream('remoterocketship.csv')
     console.log('CSV file read successfully');
 });
 
-/* Run the script every 3 days
+//Run the script every 3 days
 setInterval(runScripts,(1000 * 60 * 60 * 24) * 3)
 
 function runScripts(){
@@ -38,11 +38,6 @@ function runScripts(){
   const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
   const remoterocketship = spawn('python',["remoterocketship.py"]);
 }
-
- Run once a day */
- 
- const SimplyHired = spawn('python',["SimplyHired_scraping.py"]);
- const remoterocketship = spawn('python',["remoterocketship.py"]);
 
 app.get('/jobs/:jobtitle/:company/:location/:salary/:keywords',(req,res) => {
   let retval = []
